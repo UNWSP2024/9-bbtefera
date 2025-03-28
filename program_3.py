@@ -10,7 +10,14 @@
 # are converted to a number.
 def sum_numbers_from_file():
     ######################
-    # Add your code here #
+with open('numbers.txt', 'r') as file:
+        total = 0
+        for line in file:
+            try:
+                total += int(line.strip())
+            except ValueError:
+                print(f"Warning: Skipping invalid value '{line.strip()}' in file.")
+        print(f"Total sum of numbers: {total}")
     ######################
     print('In the sum_numbers_from_file function')
 
